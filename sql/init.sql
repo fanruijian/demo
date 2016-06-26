@@ -70,8 +70,18 @@ DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
     id int(11) not null auto_increment,
     order_no varchar(20) not null,
+    open_id varchar(50) not null,
+    uid int not null,
+    docter_id int not null,
+    project_id int not null,
+    status tinyint not null DEFAULT 0  comment '0未确定，1确定，2取消,3无效',
+    order_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    address varchar(100) not null,
+    index('order_no','open_id','uid','docter_id','project_id'),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 
 
 
