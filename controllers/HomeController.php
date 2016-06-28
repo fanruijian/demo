@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\org\Fan;
+use yii\helpers\Url as U;
 class HomeController extends Controller
 {
     public function actionAaa(){
@@ -66,5 +67,31 @@ class HomeController extends Controller
         $lng2 = 108.89670592115142;
         $distance = $this->getDistance($lat1, $lng1, $lat2, $lng2);
         var_dump($distance);
+    }
+
+    public function actionKkk(){
+        $filePath = '/home/frj/www/demo/ppp.xls'; // 要读取的文件的路径
+        $PHPExcel = new \PHPExcel();
+        $objPHPExcel = \PHPExcel_IOFactory::load($filePath);
+        $currentSheet = $objPHPExcel->getSheet(0);
+        $total_line = $currentSheet->getHighestRow();  
+        $total_column = $currentSheet->getHighestColumn();  
+
+        for ($row = 2; $row <= $total_line; $row++) {  
+            $data = array();  
+            for ($column = 'A'; $column <= $total_column; $column++) {  
+                $data[] = trim($currentSheet->getCell($column.$row) -> getValue());  
+            }  
+        }
+        var_dump($data);
+    }
+
+    public function actionNnn(){
+        $cache = \Yii::$app->cache;  
+        $cache->set('name','fan',5);
+        sleep(3);
+        $p = $cache->get('name');
+        var_dump($p);
+
     }
 }
