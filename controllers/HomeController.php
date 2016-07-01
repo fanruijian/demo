@@ -94,4 +94,8 @@ class HomeController extends Controller
         var_dump($p);
 
     }
+
+    public function actionList(){
+        return $this->render('list');
+    }
 }

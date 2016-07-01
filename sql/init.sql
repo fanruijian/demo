@@ -70,6 +70,7 @@ DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
     id int(11) not null auto_increment,
     order_no varchar(20) not null,
+<<<<<<< HEAD
     uid int not null,
     type tinyint not null comment '1预约医生 2预约项目',
     docter_id int DEFAULT 0,
@@ -77,6 +78,16 @@ CREATE TABLE `order` (
     order_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     address varchar(100) not null,
   index(docter_id,project_id),
+=======
+    open_id varchar(50) not null,
+    uid int not null,
+    docter_id int not null,
+    project_id int not null,
+    status tinyint not null DEFAULT 0  comment '0未确定，1确定，2取消,3无效',
+    order_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    address varchar(100) not null,
+    index('order_no','open_id','uid','docter_id','project_id'),
+>>>>>>> 98bea667ff511be9095bbaf93ae58205ac940a7a
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

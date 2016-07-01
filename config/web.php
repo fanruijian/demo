@@ -46,7 +46,20 @@ $config = [
             ],
         ],
         */
+         'assetManager'=>[
+            'bundles'=>[
+                // 'yii\bootstrap\BootstrapAsset' => [
+                //     'css' => []
+                // ],
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,
+                    'js' => []
+                ],
+            ],
+
+        ]
     ],
+
     'params' => $params,
 ];
 

@@ -17,13 +17,17 @@ class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
+    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
     public $css = [
         'css/site.css',
+        // 'css/jquery.dataTables.min.css'
     ];
     public $js = [
+        'js/jquery.js',
+        'js/jquery.dataTables.min.js',
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        // 'yii\web\YiiAsset',
+        // 'yii\bootstrap\BootstrapAsset',
     ];
 }
