@@ -21,13 +21,23 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
-        ],
+        'mailer' => [  
+           'class' => 'yii\swiftmailer\Mailer',  
+            'useFileTransport' =>false,//这句一定有，false发送邮件，true只是生成邮件在runtime文件夹下，不发邮件
+           'transport' => [  
+               'class' => 'Swift_SmtpTransport',  
+               'host' => 'mail.euchost.com',  //每种邮箱的host配置不一样
+               'username' => 'warning@vamaker.com',  
+               'password' => '11aa!!!!',  
+               'port' => '587',  
+               'encryption' => 'tls',  
+                                   
+                           ],   
+           'messageConfig'=>[  
+               'charset'=>'UTF-8',  
+               'from'=>['warning@vamaker.com'=>'warning@vamaker.com']  
+               ],  
+        ],    
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

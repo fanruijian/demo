@@ -45,6 +45,8 @@ CREATE TABLE `docter` (
     project_id int(11) not null,
     name varchar(20) not null,
     password varchar(36) not null,
+    account float(8,2) not null DEFAULT 0,
+    sign_count int not null DEFAULT 0,
     phone varchar(11) not null,
     lat varchar(30) comment '纬度',
     lng varchar(30) comment '经度',
@@ -57,9 +59,12 @@ CREATE TABLE `docter` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
     id int(11) not null auto_increment,
+    open_id varchar(36) not null,
     name varchar(20) not null,
     password varchar(36) not null,
     phone varchar(11) not null,
+    account float(8,2) not null DEFAULT 0,
+    sign_count int not null DEFAULT 0,
     lat varchar(30) comment '纬度',
     lng varchar(30) comment '经度',
     comment text(),
@@ -70,15 +75,8 @@ DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
     id int(11) not null auto_increment,
     order_no varchar(20) not null,
-<<<<<<< HEAD
     uid int not null,
     type tinyint not null comment '1预约医生 2预约项目',
-    docter_id int DEFAULT 0,
-    project_id int DEFAULT 0,
-    order_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    address varchar(100) not null,
-  index(docter_id,project_id),
-=======
     open_id varchar(50) not null,
     uid int not null,
     docter_id int not null,
@@ -87,9 +85,34 @@ CREATE TABLE `order` (
     order_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     address varchar(100) not null,
     index('order_no','open_id','uid','docter_id','project_id'),
->>>>>>> 98bea667ff511be9095bbaf93ae58205ac940a7a
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `coupon`;
+CREATE TABLE `coupon` (
+    id int(11) not null auto_increment,
+    coupon_name varchar(20) not null,
+    coupon_value float(8,2) not null,
+    coupon_type tinyint not not null comment '', 
+    status tinyint not null comment '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
