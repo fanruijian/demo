@@ -111,4 +111,47 @@ class HomeController extends Controller
             echo "failse";   
         die(); 
     }
+
+    public function actionDiff(){
+        $arr1 = ['name'=>'fan','age'=>'23','love'=>'xixi'];
+        $arr2 = [];
+        $arr3 = array_merge($arr1,$arr2);
+        var_dump($arr3);
+    }
+
+    public function getDiffData($oldData,$newData,$addKey,$delKey){
+        $dataDiff = array_diff($oldData,$newData);
+        $keyDiff = array_keys($dataDiff);
+        $keyDiff = array_merge($keyDiff,$addKey);
+        foreach ($oldData as $k1 => $v1) {
+            if(!in_array($k1,$keyDiff) || in_array($k1,$delKey)){
+                unset($oldData[$k1]);
+            }
+        }
+        foreach ($newData as $k2 => $v2) {
+            if(!in_array($k2,$keyDiff) || in_array($k2,$delKey)){
+                unset($newData[$k2]);
+            }
+        }
+        return [
+            'oldData' => $oldData,
+            'newData' => $newData
+        ];
+
+    }
+
+
+    public function actionEee(){
+        $arr1 = ['id'=>'1','name'=>'fan','age'=>'26','last_update'=>'2016'];
+        $arr2 = ['id'=>'2','name'=>'fan','age'=>'25','last_update'=>'2015'];
+        $p = $this->getDiffData($arr1,$arr2,['name'],[]);
+        var_dump($p);
+    }
+
+
+    public function actionIndex(){
+        return $this->render('index');
+    }
+
+    
 }
