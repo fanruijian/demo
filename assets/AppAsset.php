@@ -20,11 +20,13 @@ class AppAsset extends AssetBundle
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
     public $css = [
         'css/site.css',
-        // 'css/jquery.dataTables.min.css'
+        'css/jquery.dataTables.min.css'
     ];
     public $js = [
         'js/jquery.js',
         'js/jquery.dataTables.min.js',
+        'js/formValidator.js',
+        'js/formValidatorRegex.js'
     ];
     public $depends = [
         // 'yii\web\YiiAsset',
