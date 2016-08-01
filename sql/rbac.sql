@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS `ly_access` (
   `role_id` smallint(6) unsigned NOT NULL COMMENT '角色ID',
   `node_id` smallint(6) unsigned NOT NULL COMMENT '节点ID',
-  `level` tinyint(1) NOT NULL '节点类型',
+  `level` tinyint(3) NOT NULL COMMENT '节点类型',
   `module` varchar(50) DEFAULT NULL,
   KEY `role_id` (`role_id`),
   KEY `node_id` (`node_id`)
