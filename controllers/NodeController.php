@@ -23,10 +23,8 @@ class NodeController extends BaseController
         return $this->render();
     }
 
-    public function actionNewNode(){
-        echo 'aaa';
-        $p = $this->I();
-        var_dump($p);
+    public function actionNewNodeHandle(){
+        $this->service->saveNewNode();
     }
 
 }

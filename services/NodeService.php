@@ -11,4 +11,9 @@ class NodeService extends BaseService {
         var_dump($node);
         exit();
     }
+
+    public function saveNewNode(){
+    	$data = $this->I();
+    	$save = $this->save('Node',$data);
+    }
 }//end
