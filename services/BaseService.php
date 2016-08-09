@@ -8,7 +8,7 @@ use app\traits\HierarchyTrait;
 
 class BaseService
 {
-
+    use RequestTrait, ModelTrait, DataTrait, HierarchyTrait;
 	public function __construct(){
 	}
 

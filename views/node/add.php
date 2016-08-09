@@ -3,26 +3,34 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 ?>
 <style type="text/css">
 </style>
-<form class="form-horizontal">
+<form class="form-horizontal" method="post" action="<?php echo Url::to(['node/new-node']);?>">
   <div class="form-group">
-    <label for="firstname" class="col-sm-2 control-label">name</label>
+    <label for="firstname" class="col-sm-2 control-label">名称:</label>
     <div class="col-sm-10">
-       <input type="text" class="form-control" id="firstname" 
+       <input type="text" name="name" class="form-control" id="firstname" 
           placeholder="请输入名字">
     </div>
   </div>
   <div class="form-group">
-    <label for="firstname" class="col-sm-2 control-label">link</label>
+    <label for="firstname" name="title" class="col-sm-2 control-label">地址:</label>
     <div class="col-sm-10">
        <input type="text" class="form-control" id="firstname" 
-          placeholder="请输入名字">
+          placeholder="请输入地址">
     </div>
   </div>
   <div class="form-group">
-    <label for="name" class="col-sm-2 control-label">选择列表</label>
+    <label for="firstname" class="col-sm-2 control-label">级别:</label>
+    <div class="col-sm-10">
+       <input type="text" name="level" class="form-control" id="firstname" 
+          placeholder="请输入级别">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">选择列表:</label>
     <div class="col-sm-3">
       <select class="form-control">
         <option value="1">1</option>
