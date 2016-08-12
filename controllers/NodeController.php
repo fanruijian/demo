@@ -12,11 +12,15 @@ class NodeController extends BaseController
     public function actionList(){
         echo date("Y-m-d", mktime(0, 0, 0, 12, 32, 2007));
         $nodeService = new NodeService();
-        $nodeService -> kkk();
+        $this->node = $this->toJson($nodeService -> getAllNode());
+
+        $this->aaa = "fdasf";
     }
 
     public function actionAdd(){
-        return $this->render('add');
+        $this->node = $this->toJson($this->service->getAllNode());
+        $this->aaa = 'aaa';
+        return $this->show();
     }
 
     public function actionEdit(){
@@ -25,6 +29,11 @@ class NodeController extends BaseController
 
     public function actionNewNodeHandle(){
         $this->service->saveNewNode();
+    }
+
+    public function actionGetNode(){
+        $nodes = $this->service->getNode();
+        $this->jsonReturn($nodes);
     }
 
 }

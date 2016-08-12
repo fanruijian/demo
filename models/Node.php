@@ -32,7 +32,7 @@ class Node extends ActiveRecord
     public function rules()
     {
         return [
-            [['name','title','status','sort','pid','level'], 'required'],
+            [['name','title','pid','level'], 'required'],
             [['sort','pid','level','status'], 'integer'],
             [['name','title'], 'string']
         ];

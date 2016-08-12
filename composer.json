@@ -18,7 +18,8 @@
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
         "phpoffice/phpexcel": "dev-develop",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
+        "myweishanli/yii2-extjs-rbac": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

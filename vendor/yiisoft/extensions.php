@@ -57,4 +57,13 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'myweishanli/yii2-extjs-rbac' => 
+  array (
+    'name' => 'myweishanli/yii2-extjs-rbac',
+    'version' => '1.0.5.0',
+    'alias' => 
+    array (
+      '@wsl/rbac' => $vendorDir . '/myweishanli/yii2-extjs-rbac',
+    ),
+  ),
 );

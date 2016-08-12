@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "479407875c975e7dbee0aefcb85e62d5",
-    "content-hash": "5c27dd23827e5c153817a7f3f5d227c6",
+    "hash": "8089ff68a795b6850d70d5663ca53517",
+    "content-hash": "ef29968c5e780db031b6a8236a206a38",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -54,6 +54,77 @@
                 "mobile-first",
                 "responsive",
                 "web"
+            ]
+        },
+        {
+            "name": "bower-asset/dp-extjs",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myweishanli/extjs.git",
+                "reference": "eaa86ff384a04763dbeb8d43e2c744c6e2ee37bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myweishanli/extjs/zipball/eaa86ff384a04763dbeb8d43e2c744c6e2ee37bd",
+                "reference": "eaa86ff384a04763dbeb8d43e2c744c6e2ee37bd",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "js/ext-all.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Ext Js 5",
+            "keywords": [
+                "ExtJs",
+                "ExtJs5"
+            ]
+        },
+        {
+            "name": "bower-asset/dp-extjs-extend",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myweishanli/extjs-extend.git",
+                "reference": "e6cc1e8aa4994841e23169f3c9a69028690f719c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myweishanli/extjs-extend/zipball/e6cc1e8aa4994841e23169f3c9a69028690f719c",
+                "reference": "e6cc1e8aa4994841e23169f3c9a69028690f719c",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/dp-extjs": "~1.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./Application.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Extjs 5 extend",
+            "keywords": [
+                "extend",
+                "extjs"
             ]
         },
         {
@@ -298,6 +369,112 @@
                 "html"
             ],
             "time": "2015-08-05 01:03:42"
+        },
+        {
+            "name": "myweishanli/yii2-extjs-rbac",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myweishanli/yii2-extjs-rbac.git",
+                "reference": "8c83b6c2517fb5997894df2caee2dcd453e701ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myweishanli/yii2-extjs-rbac/zipball/8c83b6c2517fb5997894df2caee2dcd453e701ad",
+                "reference": "8c83b6c2517fb5997894df2caee2dcd453e701ad",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/dp-extjs": "~1.0",
+                "bower-asset/dp-extjs-extend": "~1.0",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": ">=2.0.6"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "wsl\\rbac\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shanli Wei",
+                    "email": "myweishanli@gmail.com"
+                }
+            ],
+            "description": "Yii2 ExtJs5 RBAC",
+            "homepage": "https://github.com/myweishanli/yii2-extjs-rbac",
+            "keywords": [
+                "extjs5",
+                "rbac",
+                "yii2"
+            ],
+            "time": "2016-01-12 12:22:42"
+        },
+        {
+            "name": "phpoffice/phpexcel",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "fcc5c6585574054bd2dce530d5fb3f5da745bc49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/fcc5c6585574054bd2dce530d5fb3f5da745bc49",
+                "reference": "fcc5c6585574054bd2dce530d5fb3f5da745bc49",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": "^5.2|^7.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Erik Tilt"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://rootslabs.net"
+                }
+            ],
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "time": "2016-06-05 15:48:23"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -903,7 +1080,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "phpoffice/phpexcel": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
