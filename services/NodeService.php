@@ -3,6 +3,7 @@ namespace app\services;
 
 use app\utils\Functions as F;
 use app\models\Node;
+use app\utils\PHPTree;
 
 class NodeService extends BaseService {
     
@@ -10,12 +11,16 @@ class NodeService extends BaseService {
         'id'    =>  'id',
         'name'  =>  'title',
         'level' =>  'level',
-        'pid'   =>  'pid'
+        'parent_id'   =>  'pid'
     ];
 
     public function getAllNode(){
         $node = Node::find()->asArray()->all();
         $list = $this->fieldsMap($this->nodeMap,$node);
+        $r = PHPTree::makeTree($list);
+        echo json_encode($r);
+        exit();
+
         return $list;
     }
 
@@ -26,14 +31,4 @@ class NodeService extends BaseService {
 
     }
 
-    public function getNode(){
-    	$pid = $this->I('pid');
-    	if(!isset($pid)){
-    		$pid = 0;
-    	}
-    	$where = ['pid'=>$pid];
-    	$list = $this->getAll('Node', $where);
-    	$list = $this->fieldsMap($this->nodeMap,$list);
-    	return $list;
-    }
 }//end
