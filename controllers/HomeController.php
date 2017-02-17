@@ -9,7 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\org\Fan;
-class HomeController extends Controller
+class HomeController extends AuthController
 {
     public function actionAaa(){
         echo 'aaa';
@@ -66,5 +66,9 @@ class HomeController extends Controller
         $lng2 = 108.89670592115142;
         $distance = $this->getDistance($lat1, $lng1, $lat2, $lng2);
         var_dump($distance);
+    }
+
+    public function actionReg(){
+        $this->service->saveUser();
     }
 }

@@ -104,15 +104,15 @@ trait RequestTrait {
         $this->S('LastRequestTime', time());
     }
 
-    public function isHeartClicking() {
-        if (isset($this->id) && substr($this->id, 0, 3) == 'api') return true;
-        if (!isset($this->action) || $this->action->id == 'login') return true;
-        //remove this after login enabled
-        $lifeSpan = \Yii::$app->params['session']['SESSION_LIFE_SPAN'];
-        $lastRequestTime = $this->S('LastRequestTime');
-        $intval = time() - $lastRequestTime;
-        return $lifeSpan > $intval;
-    }
+    // public function isHeartClicking() {
+    //     if (isset($this->id) && substr($this->id, 0, 3) == 'api') return true;
+    //     if (!isset($this->action) || $this->action->id == 'login') return true;
+    //     //remove this after login enabled
+    //     $lifeSpan = \Yii::$app->params['session']['SESSION_LIFE_SPAN'];
+    //     $lastRequestTime = $this->S('LastRequestTime');
+    //     $intval = time() - $lastRequestTime;
+    //     return $lifeSpan > $intval;
+    // }
     
     public function upload($isVideo=false) {
         $config = \Yii::$app->params['upload'];
